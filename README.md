@@ -7,6 +7,10 @@ Self-Driving Car Engineer Nanodegree Program
 # The Model
  
 Mz approach to the project was to use the code example of the lectures and then fine tune the parameters. 
+
+![alt text](https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/formulas.png "formulas")
+
+
  
 The files I worked on were main.cpp and MPC.cpp
  
