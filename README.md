@@ -6,15 +6,14 @@ Self-Driving Car Engineer Nanodegree Program
 
 # The Model
  
-Mz approach to the project was to use the code example of the lectures and then fine tune the parameters. 
+My approach to the project was to use the code example of the lectures and then fine tune the parameters. The model of the lectures is a kinematic model. It does not take into account friction of wheels, slip or the weight of the car etc. The advantage is that such a model is quite easy to summarize in a few formulas. They are: 
 
 ![alt text](https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/formulas.png "formulas")
 
+These formulas are used in the two files I edited: main.cpp and MPC.cpp. In MPC.cpp we use it for automatic optimization of parameters and in main.cpp we use the model to take care of latency issues.   
 
  
-The files I worked on were main.cpp and MPC.cpp
- 
-## main.cpp
+## Source file main.cpp
  
 In line 88 we get the message form the simulator and subsequently extract from it the parameters. 
  
@@ -32,7 +31,7 @@ The mentioned vector is then an input variable for the MPC solver. We then get f
  
 In lines 211 to 270 we set the new throttle and convert the new steering angle to a value suitable for the simulator. In addition we create vectors of the polygon and the way points that are then used to draw the yellow and green lines. Finally a JSON object is constructed which  contains the new steering angle, throttle, yellow and green lines. The JSON object is then sent to the socket. 
  
-## MPC.cpp
+## Source file MPC.cpp
  
 I used the solver as described in the lectures. To improve model performance I tuned the following parameters: 
  
