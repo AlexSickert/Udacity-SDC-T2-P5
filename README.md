@@ -4,13 +4,13 @@ Self-Driving Car Engineer Nanodegree Program
 ---
 
 
-## The Model
+# The Model
  
 Mz approach to the project was to use the code example of the lectures and then fine tune the parameters. 
  
 The files I worked on were main.cpp and MPC.cpp
  
-# main.cpp
+## main.cpp
  
 In line 88 we get the message form the simulator and subsequently extract from it the parameters. 
  
@@ -28,20 +28,20 @@ The mentioned vector is then an input variable for the MPC solver. We then get f
  
 In lines 211 to 270 we set the new throttle and convert the new steering angle to a value suitable for the simulator. In addition we create vectors of the polygon and the way points that are then used to draw the yellow and green lines. Finally a JSON object is constructed which  contains the new steering angle, throttle, yellow and green lines. The JSON object is then sent to the socket. 
  
-# MPC.cpp
+## MPC.cpp
  
 I used the solver as described in the lectures. To improve model performance I tuned the following parameters: 
  
 Speed reference: Using my setup the maximum value is 50 mph. 
 I realized that an emphasis on minimizing the value gap between sequential actuations makes the car driving smoother. So I experimented with various values. If the value is too small the car swings like a pendulum. If the value is too big, then the car gets off track in a curve. Ultimately i used a value of 2000. 
  
-## Timestep Length and Elapsed Duration (N & dt)
+# Timestep Length and Elapsed Duration (N & dt)
  
 My theory was that the more time steps we calculate into the future the better and the smaller the time elapsed the better. But during my tests it turned out this is not the case. I started with N = 25 and increased to 50 with no improvement of overall performance. I then reduced to 8 and experienced best performance. 
  
 The initial value of dt was 0.05 and a reduction to 0.02 did not improve performance. I then increased it to 0.1. The overall system worked well with this. 
  
-## Latency
+# Latency
 The problem with latency is handled in main.cpp in line 109 to 122. We know that the latency is 100ms and therefore we calculate where the care probably would be in 100ms. 
 
 
