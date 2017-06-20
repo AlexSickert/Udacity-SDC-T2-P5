@@ -78,6 +78,10 @@ Eigen::VectorXd polyfit(Eigen::VectorXd xvals, Eigen::VectorXd yvals,
 }
 
 
+/*
+ * For more detailed explanations please read the README file here:
+ * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+ */
 
 int main() {
     uWS::Hub h;
@@ -105,6 +109,12 @@ int main() {
                     double v = j[1]["speed"];
 
 //                    std::cout << "------------------------------" << std::endl;
+                    
+                    
+                    /*
+                     * For more detailed explanations please read the README file here:
+                     * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+                     */
                     
                     /*
                      * we want to handle latency and for doing that we create a
@@ -159,6 +169,12 @@ int main() {
                     
                     local_ptsx.resize(ptsx.size());
                     local_ptsy.resize(ptsx.size());
+                    
+                    
+                    /*
+                     * For more detailed explanations please read the README file here:
+                     * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+                     */
                     
                     /*
                      * We convert the postitions from the coordinate system of
@@ -226,6 +242,11 @@ int main() {
                     vector<double> mpc_y_vals;
 
 
+                    
+                    /*
+                     * For more detailed explanations please read the README file here:
+                     * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+                     */
 
                     /*
                      * drawing the green line which shows the polynomial

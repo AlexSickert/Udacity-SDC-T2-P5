@@ -40,6 +40,12 @@ public:
     }
 
     typedef CPPAD_TESTVECTOR(AD<double>) ADvector;
+    
+    
+    /*
+     * For more detailed explanations please read the README file here:
+     * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+     */
 
     void operator()(ADvector& fg, const ADvector& vars) {
         // TODO: implement MPC
@@ -151,6 +157,12 @@ MPC::~MPC() {
 }
 
 
+
+/*
+ * For more detailed explanations please read the README file here:
+ * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+ */
+
 vector<double> MPC::Solve(Eigen::VectorXd x0, Eigen::VectorXd coeffs) {
     
   size_t i;
@@ -163,6 +175,12 @@ vector<double> MPC::Solve(Eigen::VectorXd x0, Eigen::VectorXd coeffs) {
   double v = x0[3];
   double cte = x0[4];
   double epsi = x0[5];
+  
+  
+/*
+ * For more detailed explanations please read the README file here:
+ * https://github.com/AlexSickert/Udacity-SDC-T2-P5/blob/master/README.md 
+ */
 
   // number of independent variables
   // N timesteps == N - 1 actuations
